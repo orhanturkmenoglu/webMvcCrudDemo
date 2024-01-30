@@ -3,9 +3,11 @@ package com.example.webMvcCrudDemo.controller;
 import com.example.webMvcCrudDemo.dto.BookDto;
 import com.example.webMvcCrudDemo.model.Book;
 import com.example.webMvcCrudDemo.service.BookService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,8 +36,14 @@ public class BookController {
     }
 
     @PostMapping("/books/create")
-    public String saveBook(@ModelAttribute("books") Book book) {
-        bookService.saveBook(book);
+    public String saveBook(@Valid @ModelAttribute("books") Book book
+            , BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            return "books-create";
+        } else {
+            bookService.saveBook(book);
+        }
         return "redirect:/books";
     }
 

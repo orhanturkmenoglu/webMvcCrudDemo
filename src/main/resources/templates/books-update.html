@@ -66,6 +66,62 @@
                                    id="exampleInputDiscountRate">
                         </div>
 
+
+                        <span th:if="${#fields.hasErrors('name')}"
+                              th:errors="*{name}"
+                              class="errors">
+                </span>
+
+                        <span th:if="${#fields.hasErrors('barcode')}"
+                              th:errors="*{barcode}"
+                              class="errors">
+                </span>
+
+                        <span th:if="${#fields.hasErrors('brand')}"
+                              th:errors="*{brand}"
+                              class="errors">
+                </span>
+
+                        <span th:if="${#fields.hasErrors('author')}"
+                              th:errors="*{author}"
+                              class="errors">
+                </span>
+
+                        <span th:if="${#fields.hasErrors('category')}"
+                              th:errors="*{category}"
+                              class="errors">
+                </span>
+
+                        <span th:if="${#fields.hasErrors('numberOfPages')}"
+                              th:errors="*{numberOfPages}"
+                              class="errors">
+                </span>
+
+                        <span th:if="${#fields.hasErrors('amountOfStock')}"
+                              th:errors="*{amountOfStock}"
+                              class="errors">
+                </span>
+
+                        <span th:if="${#fields.hasErrors('purchasePrice')}"
+                              th:errors="*{purchasePrice}"
+                              class="errors">
+                </span>
+
+                        <span th:if="${#fields.hasErrors('salePrice')}"
+                              th:errors="*{salePrice}"
+                              class="errors">
+                </span>
+
+                        <span th:if="${#fields.hasErrors('discountedPrice')}"
+                              th:errors="*{discountedPrice}"
+                              class="errors">
+                </span>
+
+                        <span th:if="${#fields.hasErrors('discountRate')}"
+                              th:errors="*{discountRate}"
+                              class="errors">
+                </span>
+
                         <button type="submit" class="btn btn-primary">Create</button>
                     </form>
                 </div>
