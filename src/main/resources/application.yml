@@ -17,3 +17,10 @@ spring:
   #banner mode of
   main:
     banner-mode: off
+
+
+ # spring security basic configuration
+  security:
+    user:
+      name: admin
+      password: 12345

@@ -11,10 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -65,7 +62,7 @@ public class BookController {
         return "books-update";
     }
 
-    @PostMapping("/books/{bookId}/update")
+    @PutMapping("/books/{bookId}/update")
     @Operation(summary = "update book", description = "update book")
     @ApiResponse(responseCode = "201",description = "update book")
     public String updateBook(@PathVariable("bookId") long bookId, @ModelAttribute("books") Book books) {
